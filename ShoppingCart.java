@@ -5,7 +5,7 @@ public class ShoppingCart {
 	private String customerName;
 	private String currentDate;
 	
-	private ArrayList<ItemToPurchase> cartItems = new ArrayList<>();
+	private ArrayList<ItemToPurchase> cartItems = new ArrayList<ItemToPurchase>();
 	
 	public ShoppingCart() {
 		this.customerName = "none";
