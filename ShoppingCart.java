@@ -45,20 +45,23 @@ public class ShoppingCart {
 		}
 	}
 	
-	public void modifyItem(ItemToPurchase item, String itemName) {
-		for(int i=0; i<cartItems.size(); i++) {
-			item = cartItems.get(i);
-			if(itemName.equals(item.getName())) {
-				cartItems.get(i).setName("");
-				cartItems.get(i).setDescription("");
-				cartItems.get(i).setPrice(20);
-				cartItems.get(i).setQuantity(5);
-			}else {
-				System.out.println("Item not found in cart. Nothing modified.");
-	        }
-		}
-		
-	}
+	public void modifyItem(ItemToPurchase itemToPurchase){
+
+	       int count = 0;
+
+	       for(int i = 0; i < cartItems.size(); ++i){
+
+	           if(cartItems.get(i).getName().equals(itemToPurchase.getName())){
+	               cartItems.get(i).setQuantity(itemToPurchase.getQuantity());
+	               ++count;
+	           }
+
+
+	       }
+	       if(count == 0){
+	           System.out.println(" Item not found in cart. Nothing modified.");
+	       }
+	   }
 	
 	public int getNumItemsInCart() {
 		int quantity = 0;
